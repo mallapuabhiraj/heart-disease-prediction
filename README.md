@@ -102,9 +102,8 @@ pip install -r requirements.txt
 ```python
 import joblib
 import pandas as pd
-
-model = joblib.load('Heart_Disease_SVM.joblib')
-
+from src.preprocess import Preprocess
+model = joblib.load('models/Heart_Disease_SVM')
 sample = pd.DataFrame([{
     'age': 54, 'sex': 1, 'cp': 2, 'trestbps': 130,
     'chol': 250, 'fbs': 0, 'restecg': 1, 'thalach': 155,
@@ -138,6 +137,9 @@ heart-disease-prediction/
 ├── heart.csv                           # Cleveland dataset
 ├── Heart_Disease_Prediction.ipynb      # Main notebook
 ├── requirements.txt                    # Dependencies
+│
+├── src/
+│   ├── preprocess.py
 │
 ├── models/
 │   ├── Heart_Disease_SVM.joblib        # ✅ Final model
